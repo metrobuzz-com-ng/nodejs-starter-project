@@ -28,9 +28,13 @@ export const responseObject: ResponseObjectFn = (props) => {
     responseObject = {
       ...responseObject,
       serviceStatusCode: responseStatusCode,
-      status:
-        parseInt(responseStatusCode.toString()) >= 200 &&
-        parseInt(responseStatusCode.toString()) <= 300,
+    };
+  }
+
+  if (statusCode) {
+    responseObject = {
+      ...responseObject,
+      status: statusCode >= 200 && statusCode <= 300,
     };
   }
 
