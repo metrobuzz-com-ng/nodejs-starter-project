@@ -15,7 +15,6 @@ export const responseObject: ResponseObjectFn = (props) => {
     code: number;
     message: string;
     payload: unknown;
-    serviceStatusCode?: string | number;
     status?: boolean;
   } = {
     code: statusCode,
