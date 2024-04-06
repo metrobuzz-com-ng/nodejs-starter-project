@@ -1,7 +1,7 @@
 {
-  "name": "loudinsight-gateway",
+  "name": "nodejs-starter-project",
   "version": "1.0.0",
-  "description": "Loudinsight gateway service",
+  "description": "nodejs-starter-project",
   "main": "src/app.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
