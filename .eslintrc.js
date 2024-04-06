@@ -1,11 +1,16 @@
 module.exports = {
+  parser: "@typescript-eslint/parser",
   env: {
     browser: true,
     commonjs: true,
     es2021: true,
   },
-  plugins: ["prettier"],
-  extends: ["google"],
+  plugins: ["prettier", "@typescript-eslint"],
+  extends: [
+    "google",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+  ],
   overrides: [
     {
       env: {
@@ -13,12 +18,13 @@ module.exports = {
       },
       files: [".eslintrc.{js,cjs}"],
       parserOptions: {
-        sourceType: "script",
+        sourceType: "module",
       },
     },
   ],
   parserOptions: {
     ecmaVersion: "latest",
+    sourceType: "module",
   },
   rules: {
     "object-curly-spacing": ["error", "always"],
@@ -33,5 +39,6 @@ module.exports = {
     "require-await": "error",
     "valid-jsdoc": "off",
     "max-len": ["error", { code: 80 }],
+    "new-cap": ["off"],
   },
 };

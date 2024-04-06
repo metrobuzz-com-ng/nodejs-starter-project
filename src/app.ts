@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { getters } from "@config";
-import { log } from "netwrap";
+import { loadServices } from "@services";
 
 const app = express();
 
@@ -14,8 +14,10 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 
+loadServices(app);
+
 const port = getters.getAppPort();
 
 app.listen(port, () => {
-  log(`${getters.geti18ns().LOGS.RUNNING_APP} ${port}`);
+  console.log(`${getters.geti18ns().LOGS.RUNNING_APP} ${port}`);
 });

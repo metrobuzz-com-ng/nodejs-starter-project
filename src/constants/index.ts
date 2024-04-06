@@ -1,4 +1,5 @@
 import { i18n } from "./i18n";
+import { urls } from "./urls";
 
 export const constants = {
   defaults: {
@@ -6,7 +7,6 @@ export const constants = {
     environment: "development",
     appPort: 7000,
   },
-  i18n: {
-    ...i18n,
-  },
+  i18n,
+  urls,
 };
