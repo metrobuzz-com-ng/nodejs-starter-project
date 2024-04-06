@@ -6,30 +6,22 @@ export const responseObject: ResponseObjectFn = (props) => {
     statusCode,
     message,
     payload = undefined,
-    responseStatusCode = undefined,
     status = false,
   } = props;
 
   res.set("Cache-Control", "no-store");
 
   let responseObject: {
-    statusCode: number;
+    code: number;
     message: string;
     payload: unknown;
     serviceStatusCode?: string | number;
     status?: boolean;
   } = {
-    statusCode,
+    code: statusCode,
     message,
     payload,
   };
-
-  if (responseStatusCode) {
-    responseObject = {
-      ...responseObject,
-      serviceStatusCode: responseStatusCode,
-    };
-  }
 
   if (statusCode) {
     responseObject = {
