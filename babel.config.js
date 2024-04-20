@@ -11,7 +11,6 @@ module.exports = {
           "@config": "./src/config",
           "@types": "./src/types",
           "@constants": "./src/constants",
-          "@services": "./src/services",
           "@utils": "./src/utils",
           "@controllers": "./src/controllers",
           "@models": "./src/models",

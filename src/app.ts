@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { databaseConnect, getters } from "@config";
-import { loadServices } from "@services";
+import { loadServices } from "./loader";
 
 const app = express();
 

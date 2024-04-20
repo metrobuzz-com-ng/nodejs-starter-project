@@ -1,5 +1,4 @@
 import { constants } from "@constants";
-import { healthRouter } from "./health";
 import type { Express } from "express";
 import { joinUrls, responseObject } from "@utils";
 import routers from "@routers";
@@ -7,7 +6,7 @@ import routers from "@routers";
 const servicesLoader = [
   {
     path: joinUrls(constants.urls.health.entry().path),
-    handler: [healthRouter],
+    handler: [routers.health],
   },
   {
     path: joinUrls(constants.urls.user.entry().path),

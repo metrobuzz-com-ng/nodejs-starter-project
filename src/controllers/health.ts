@@ -1,7 +1,7 @@
 import { responseObject } from "@utils";
 import type { RequestHandler } from "express";
 
-export const checkServiceHealth: RequestHandler = (...rest) => {
+const checkServiceHealth: RequestHandler = (...rest) => {
   const res = rest[1];
 
   return responseObject({
@@ -10,3 +10,5 @@ export const checkServiceHealth: RequestHandler = (...rest) => {
     statusCode: 200,
   });
 };
+
+export default { checkServiceHealth };
