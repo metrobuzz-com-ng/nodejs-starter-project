@@ -13,8 +13,6 @@ module.exports = {
           "@constants": "./src/constants",
           "@utils": "./src/utils",
           "@controllers": "./src/controllers",
-          "@models": "./src/models",
-          "@database": "./src/database",
           "@routers": "./src/routers",
         },
       },
