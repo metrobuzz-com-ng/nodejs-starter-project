@@ -5,8 +5,4 @@ export const urls = {
     entry: () => routeCreator("health"),
     check: () => routeCreator("check"),
   },
-  user: {
-    entry: () => routeCreator("user"),
-    getAllUsers: () => routeCreator("all"),
-  },
 };
