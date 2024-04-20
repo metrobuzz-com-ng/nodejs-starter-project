@@ -29,9 +29,14 @@ const getAppPort = () => {
   return parseInt(env.APP_PORT);
 };
 
+const getDatabaseUri = () => {
+  return env.DATABASE_URI;
+};
+
 export const getters = {
   geti18ns,
   getCurrentLanguage,
   getNodeEnv,
   getAppPort,
+  getDatabaseUri,
 };
