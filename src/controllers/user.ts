@@ -1,8 +1,8 @@
 import { RequestHandler } from "express";
 import dbQueries from "../database";
 import { responseObject } from "@utils";
-import { User } from "@types";
 import { HttpStatusCode, getters } from "@config";
+import { User } from "@types";
 
 const viewUsers: RequestHandler = async (req, res) => {
   let statusCode = HttpStatusCode.InternalServerError;
