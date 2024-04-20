@@ -11,6 +11,7 @@ export const i18n = {
         HEALTH_CHECK: {
           SUCCESS: "Service is up and running fine",
         },
+        WILDCARD: "Resource not found",
       },
     },
   },

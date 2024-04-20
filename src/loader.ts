@@ -2,6 +2,7 @@ import { constants } from "@constants";
 import type { Express } from "express";
 import { joinUrls, responseObject } from "@utils";
 import routers from "@routers";
+import { getters, HttpStatusCode } from "@config";
 
 const servicesLoader = [
   {
@@ -19,8 +20,8 @@ export const loadServices = (app: Express) => {
   app.use("*", (...rest) => {
     responseObject({
       res: rest[1],
-      message: "Resource not found",
-      statusCode: 404,
+      message: getters.geti18ns().LOGS.ROUTES.WILDCARD,
+      statusCode: HttpStatusCode.NotFound,
     });
   });
 };
