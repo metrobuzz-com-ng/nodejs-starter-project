@@ -1,11 +1,11 @@
 import { HttpStatusCode, getters } from "@config";
-import { responseObject } from "@utils";
+import utils from "@utils";
 import type { RequestHandler } from "express";
 
 const checkServiceHealth: RequestHandler = (...rest) => {
   const res = rest[1];
 
-  return responseObject({
+  return utils.responseObject({
     res,
     message: getters.geti18ns().LOGS.ROUTES.HEALTH.CHECK.SUCCESS,
     statusCode: HttpStatusCode.OK,
