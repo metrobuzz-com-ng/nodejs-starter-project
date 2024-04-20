@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { getters } from "@config";
+import { databaseConnect, getters } from "@config";
 import { loadServices } from "./loader";
 
 const app = express();
@@ -13,6 +13,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(express.json());
+
+databaseConnect();
 
 loadServices(app);
 

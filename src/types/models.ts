@@ -1,22 +1,12 @@
-import { Model, Optional } from "sequelize";
+import { Document } from "mongoose";
 
 /**
  * User types
  */
-
-export type UserAttributes = {
+export type User = {
   id: number;
   firstName: string;
   lastName: string;
   createdAt?: Date;
   updatedAt?: Date;
-};
-
-export interface UserInstance
-  extends Model<UserAttributes>,
-    Optional<UserAttributes, "id"> {
-  firstName: string;
-  lastName: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
+} & Document;

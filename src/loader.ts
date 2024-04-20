@@ -8,6 +8,10 @@ const servicesLoader = [
     path: joinUrls(constants.urls.health.entry().path),
     handler: [routers.health],
   },
+  {
+    path: joinUrls(constants.urls.user.entry().path),
+    handler: [routers.user],
+  },
 ];
 
 export const loadServices = (app: Express) => {
