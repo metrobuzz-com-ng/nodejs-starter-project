@@ -20,6 +20,7 @@ export const i18n = {
             NOT_FOUND: "There are currently no users to display",
           },
         },
+        WILDCARD: "Resource not found",
       },
     },
   },
