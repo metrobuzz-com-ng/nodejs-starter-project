@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
-import dbQueries from "../database";
-import { responseObject } from "@utils";
+import dbQueries from "@database";
+import utils from "@utils";
 import { UserInstance } from "@types";
 
 const viewUsers: RequestHandler = async (req, res) => {
@@ -21,7 +21,7 @@ const viewUsers: RequestHandler = async (req, res) => {
     const error_ = error as unknown as Error;
     message = error_.message;
   } finally {
-    responseObject({
+    utils.responseObject({
       res,
       message,
       statusCode,

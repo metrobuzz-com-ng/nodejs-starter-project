@@ -2,7 +2,7 @@ import { sequelize } from "@config";
 import { UserInstance } from "@types";
 import { DataTypes } from "sequelize";
 
-export const User = sequelize.define<UserInstance>(
+const User = sequelize.define<UserInstance>(
   "User",
   {
     id: {
@@ -21,3 +21,5 @@ export const User = sequelize.define<UserInstance>(
     timestamps: true,
   },
 );
+
+export default User;

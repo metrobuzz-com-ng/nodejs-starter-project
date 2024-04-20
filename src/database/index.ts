@@ -1,7 +1,5 @@
-import userQueries from "./user";
+import user from "./user";
 
 export default {
-  user: {
-    ...userQueries,
-  },
+  user,
 };

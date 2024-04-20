@@ -1,15 +1,16 @@
 import { constants } from "@constants";
 import type { Express } from "express";
-import { joinUrls, responseObject } from "@utils";
+import utils from "@utils";
 import routers from "@routers";
+import { getters, HttpStatusCode } from "@config";
 
 const servicesLoader = [
   {
-    path: joinUrls(constants.urls.health.entry().path),
+    path: utils.joinUrls(constants.urls.health.entry().path),
     handler: [routers.health],
   },
   {
-    path: joinUrls(constants.urls.user.entry().path),
+    path: utils.joinUrls(constants.urls.user.entry().path),
     handler: [routers.user],
   },
 ];
@@ -21,10 +22,10 @@ export const loadServices = (app: Express) => {
   });
 
   app.use("*", (...rest) => {
-    responseObject({
+    utils.responseObject({
       res: rest[1],
-      message: "Resource not found",
-      statusCode: 404,
+      message: getters.geti18ns().LOGS.ROUTES.WILDCARD,
+      statusCode: HttpStatusCode.NotFound,
     });
   });
 };
