@@ -7,7 +7,7 @@ const checkServiceHealth: RequestHandler = (...rest) => {
 
   return responseObject({
     res,
-    message: getters.geti18ns().LOGS.ROUTES.HEALTH_CHECK.SUCCESS,
+    message: getters.geti18ns().LOGS.ROUTES.HEALTH.CHECK.SUCCESS,
     statusCode: HttpStatusCode.OK,
   });
 };

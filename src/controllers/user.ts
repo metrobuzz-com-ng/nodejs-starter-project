@@ -2,20 +2,25 @@ import { RequestHandler } from "express";
 import dbQueries from "../database";
 import { responseObject } from "@utils";
 import { User } from "@types";
+import { HttpStatusCode, getters } from "@config";
 
 const viewUsers: RequestHandler = async (req, res) => {
-  let statusCode = 500;
-  let message = "A critical error has occurred";
+  let statusCode = HttpStatusCode.InternalServerError;
+  let message =
+    getters.geti18ns().LOGS.ROUTES.USER.VIEW_ALL_USERS.CRITICAL_ERROR;
   let payload: User[] = [];
   try {
     const users = await dbQueries.user.findAllUsers();
 
     if (!users) {
-      throw new Error("Unable to find any users");
+      statusCode = HttpStatusCode.NotFound;
+      throw new Error(
+        getters.geti18ns().LOGS.ROUTES.USER.VIEW_ALL_USERS.NOT_FOUND,
+      );
     }
 
-    statusCode = 200;
-    message = "Successfully gotten all available users";
+    statusCode = HttpStatusCode.OK;
+    message = getters.geti18ns().LOGS.ROUTES.USER.VIEW_ALL_USERS.SUCCESS;
     payload = users;
   } catch (error) {
     const error_ = error as unknown as Error;
